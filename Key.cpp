@@ -67,6 +67,8 @@ void key_read() {                                               // Read 4 Keys i
                                         break;
                                 case 6: if( ++Line_number>2 )   Line_number = 1;
                                         break;
+                                case 7: if( ++Line_number>2 )   Line_number = 1;
+                                        break;
                             }
                             break;
                     case 2: switch( Page_Number_Run )   {               // Change Line in Mode : Query

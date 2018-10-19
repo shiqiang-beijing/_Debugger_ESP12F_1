@@ -19,6 +19,7 @@ void draw() {
                     case 4: draw_page_cfg_4();  break;
                     case 5: draw_page_cfg_5();  break;
                     case 6: draw_page_cfg_6();  break;
+                    case 7: draw_page_cfg_7();  break;
                 }
                 break;
         case 2: switch( Page_Number_Run )   {               // Query Mode
@@ -44,7 +45,7 @@ void draw() {
 //------------------------------------------------------------
 void draw_page_welcome() {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);                   // Background Color : Enable
@@ -72,7 +73,7 @@ void draw_page_welcome() {
 //------------------------------------------------------------
 void draw_page_cfg_1() {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -100,7 +101,7 @@ void draw_page_cfg_1() {
 
 void draw_page_cfg_2() {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -128,7 +129,7 @@ void draw_page_cfg_2() {
 
 void draw_page_cfg_3() {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -156,7 +157,7 @@ void draw_page_cfg_3() {
 
 void draw_page_cfg_4() {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -187,7 +188,7 @@ void draw_page_cfg_5() {
     long    tmp_i1;
     long    tmp_i2;
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -218,7 +219,7 @@ void draw_page_cfg_6() {
     long    tmp_i1;
     long    tmp_i2;
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -244,6 +245,31 @@ void draw_page_cfg_6() {
     }
 }
 
+void draw_page_cfg_7()  {
+
+    u8g2.setFont(FONT_CHARACTER);
+
+    u8g2.setCursor(0, 15);
+    u8g2.setDrawColor(0);
+    u8g2.print("Save All Configs");         // the Title
+    u8g2.setDrawColor(1);
+
+    u8g2.setCursor(8, 36);
+    u8g2.print("Save : Push ");
+
+    u8g2.setFont(FONT_SYMBOL);              // Change Font for Symbols
+    u8g2.drawGlyph(108, 36, 0x21e7);        // the Output Code for the Symbol
+
+    u8g2.setFont(FONT_CHARACTER);           // Change Font Back for Character
+    u8g2.setCursor(8, 52);
+    u8g2.print("Quit : Push No");
+
+    switch( Line_number )   {
+        case 1: u8g2.drawHLine(109,38,7); break;
+        case 2: u8g2.drawHLine(103,54,17); break;
+    }
+}
+
 //------------------------------------------------------------
 //  the Running Screen
 //------------------------------------------------------------
@@ -252,7 +278,7 @@ void draw_page_run_1()  {
     int     tmp_i1;
     int     tmp_i2;
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -439,7 +465,7 @@ void draw_page_set_1()  {
     int     tmp_i1;
     int     tmp_i2;
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);
@@ -472,7 +498,7 @@ void draw_page_set_1()  {
 
 void draw_page_set_2()  {
 
-    u8g2.setFont(FONT_USED);
+    u8g2.setFont(FONT_CHARACTER);
 
     u8g2.setCursor(0, 15);
     u8g2.setDrawColor(0);

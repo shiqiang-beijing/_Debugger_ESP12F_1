@@ -5,7 +5,7 @@
 //------------------------------------------------------------
 //      MACROs
 //------------------------------------------------------------
-#define     MAX_Page_Number_CFG 6                           // Max Page Number for Configration
+#define     MAX_Page_Number_CFG 7                           // Max Page Number for Configration
 #define     MAX_PAGE_NUMBER_RUN 6                           // Max Page Number for Running
 #define     MAX_PAGE_NUMBER_SET 2                           // Max Page Number for Setting
 
@@ -15,8 +15,9 @@
 #define     QUE_INS_INTERVAL    500                         // SCI Instruction 'Qx' Send Interval in " ms "
 #define     SET_INS_TIMES       5                           // SCI Instruction 'Sx' Send Times
 
-#define     FONT_USED           u8g2_font_t0_15b_mf         // 10 Pixel Height, English, Bold
-//#define     FONT_USED           u8g2_font_t0_15_tf        // 10 Pixel Height, English, Fine
+#define     FONT_CHARACTER      u8g2_font_t0_15b_mf         // 10 Pixel Height, English, Bold
+//#define     FONT_CHARACTER      u8g2_font_t0_15_tf        // 10 Pixel Height, English, Fine
+#define     FONT_SYMBOL         u8g2_font_unifont_t_symbols // All Symbols
 
 //------------------------------------------------------------
 //      System

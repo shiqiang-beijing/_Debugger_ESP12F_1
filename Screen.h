@@ -11,6 +11,7 @@ extern  void draw_page_cfg_3();
 extern  void draw_page_cfg_4();
 extern  void draw_page_cfg_5();
 extern  void draw_page_cfg_6();
+extern  void draw_page_cfg_7();
 
 //------------------------------------------------------------
 extern  void draw_page_run_1();

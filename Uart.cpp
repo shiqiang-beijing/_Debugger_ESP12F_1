@@ -96,8 +96,8 @@ void Cmd_Send_Setup(void) {
                 Serial.print(Idc_Slope);
                 //Serial.println(Idc_Apart);
                 Serial.println(tmp_data);
-                Number_Setup = 1;
-                Data_Changed -= 1;          // A Round Setup Instruction Send !
+                Number_Setup = 1;                   // All Setup Instruction Send !
+                Data_Changed -= 1;                  // the Setup Instruction Send Times Changed
                 break;
     }
 }
