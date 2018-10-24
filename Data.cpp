@@ -44,7 +44,8 @@ U8G2_SH1106_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0);           // page buffer, size
 //------------------------------------------------------------
 //      Data for Display
 //------------------------------------------------------------
-int     Data_Changed = 0;               // Data Has Been Changed -> Setup Instruction Send Times
+int     Cfg_Changed = 0;                // Data of Configration Changed,    'CFG_INS' Should Be Send 'Cfg_Changed' Times
+int     Set_Changed = 0;                // Data of Setting Changed,         'SET_INS' Should Be Send 'Set_Changed' Times
 
 int     Work_Mode = 0;                  // Work Mode Select :  0-> Welcome    1-> Config    2-> Querry    3-> Set
 
@@ -121,8 +122,9 @@ int     Set_Fac_L = 45;
 //------------------------------------------------------------
 int     Send_LastTime = 0;
 
-int     Number_Query = 1;
-int     Number_Setup = 1;
+int     Number_Query = 1;               // Loop Control of Instruction Send for : Query
+int     Number_Config = 1;              // Loop Control of Instruction Send for : Config
+int     Number_Setting = 1;             // Loop Control of Instruction Send for : Setting
 
 String  Ans_String = "";
 char    Ans_char[20];

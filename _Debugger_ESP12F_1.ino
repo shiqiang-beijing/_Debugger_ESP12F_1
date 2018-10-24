@@ -54,11 +54,17 @@ void loop() {
 
     if( (millis()-Send_LastTime) > QUE_INS_INTERVAL )  {    // Send out Instructions at fixed time
         Send_LastTime = millis();
-        if( Data_Changed != 0 ) {
-            Cmd_Send_Setup();                               // Setup Instructions
+        if( Cfg_Changed != 0 ) {
+            Cmd_Send_Config();                              // Instructions : Config
+        }
+        else if( Set_Changed != 0 ) {
+
+            Set_Changed = 0;
+
+            Cmd_Send_Setting();                             // Instructions : Setting
         }
         else    {
-            Cmd_Send_Query();                               // Querry Instructions
+            Cmd_Send_Query();                               // Instructions : Querry
         }
     }
 

@@ -55,51 +55,58 @@ void Cmd_Send_Query(void) {                         // the Function Serial.print
 }
 
 //------------------------------------------------------------
-// Send Out the Setup Instructions
+// Send Out the Config Instructions
 //------------------------------------------------------------
-void Cmd_Send_Setup(void) {
+void Cmd_Send_Config(void) {
     long    tmp_data;
-    switch( Number_Setup )    {
+    switch( Number_Config )    {
         case 1: Serial.print("S1");
                 Serial.print(Bias_Uab);
                 Serial.print(Bias_Ubc);
                 Serial.println(Bias_Uca);           // the Serial.println() Terminator is : '\r'+'\n'
-                Number_Setup += 1;
+                Number_Config += 1;
                 break;
         case 2: Serial.print("S2");
                 Serial.print(Ratio_Uab);
                 Serial.print(Ratio_Ubc);
                 Serial.println(Ratio_Uca);
-                Number_Setup += 1;
+                Number_Config += 1;
                 break;
         case 3: Serial.print("S3");
                 Serial.print(Bias_Iab);
                 Serial.print(Bias_Ibc);
                 Serial.println(Bias_Ica);
-                Number_Setup += 1;
+                Number_Config += 1;
                 break;
         case 4: Serial.print("S4");
                 Serial.print(Ratio_Iab);
                 Serial.print(Ratio_Ibc);
                 Serial.println(Ratio_Ica);
-                Number_Setup += 1;
+                Number_Config += 1;
                 break;
         case 5: tmp_data = Vdc_Apart * 100;
                 Serial.print("S5");
                 Serial.print(Vdc_Slope);
                 //Serial.println(Vdc_Apart);
                 Serial.println(tmp_data);
-                Number_Setup += 1;
+                Number_Config += 1;
                 break;
         case 6: tmp_data = Idc_Apart * 100;
                 Serial.print("S6");
                 Serial.print(Idc_Slope);
                 //Serial.println(Idc_Apart);
                 Serial.println(tmp_data);
-                Number_Setup = 1;                   // All Setup Instruction Send !
-                Data_Changed -= 1;                  // the Setup Instruction Send Times Changed
+                Number_Config = 1;                   // All Setup Instruction Send !
+                Cfg_Changed -= 1;                   // the Setup Instruction Send Times Changed
                 break;
     }
+}
+
+//------------------------------------------------------------
+// Send Out the Setting Instructions
+//------------------------------------------------------------
+void Cmd_Send_Setting(void) {
+
 }
 
 //------------------------------------------------------------

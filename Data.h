@@ -13,6 +13,8 @@
 #define     KEY_DEBOUNCE_LONG   350                         // Key Push Debounce Time : Long Time   in " ms "
 
 #define     QUE_INS_INTERVAL    500                         // SCI Instruction 'Qx' Send Interval in " ms "
+
+#define     CFG_INS_TIMES       5                           // SCI Instruction 'Sx' Send Times
 #define     SET_INS_TIMES       5                           // SCI Instruction 'Sx' Send Times
 
 #define     FONT_CHARACTER      u8g2_font_t0_15b_mf         // 10 Pixel Height, English, Bold
@@ -62,7 +64,8 @@ extern  U8G2_SH1106_128X64_NONAME_1_HW_I2C u8g2;        // page buffer, size = 1
 //------------------------------------------------------------
 //      Data for Display
 //------------------------------------------------------------
-extern  int     Data_Changed;
+extern  int     Cfg_Changed;
+extern  int     Set_Changed;
 
 extern  int     Work_Mode;
 
@@ -140,7 +143,8 @@ extern  int     Set_Fac_L;
 extern  int     Send_LastTime;
 
 extern  int     Number_Query;
-extern  int     Number_Setup;
+extern  int     Number_Config;
+extern  int     Number_Setting;
 
 extern  String  Ans_String;
 extern  char    Ans_char[];

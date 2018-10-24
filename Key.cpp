@@ -100,7 +100,7 @@ void key_read() {                                               // Read 4 Keys i
             if( key_up_state == 1 ) {                           // Key Pressed Confirm ( the Useful Key State )
                 switch( Work_Mode ) {
                     case 0: break;                                          // Mode : Welcom Screen
-                    case 1: Data_Changed = SET_INS_TIMES;
+                    case 1: Cfg_Changed = CFG_INS_TIMES;
                             switch( Page_Number_Cfg )   {                   // Mode : Config
                                 case 1: switch( Line_number )   {
                                             case 1: Bias_Uab += 1;  break;
@@ -141,7 +141,8 @@ void key_read() {                                               // Read 4 Keys i
                     case 2: switch( Page_Number_Run )   {                   // Mode : Query
                             }
                             break;
-                    case 3: switch( Page_Number_Set )   {                   // Mode : Set
+                    case 3: Set_Changed = SET_INS_TIMES;
+                            switch( Page_Number_Set )   {                   // Mode : Set
                                 case 1: switch( Line_number )   {
                                             case 1: Set_Udc_out += 0.1;  break;
                                             case 2: Set_Idc_Lmt += 0.1;  break;
@@ -163,7 +164,7 @@ void key_read() {                                               // Read 4 Keys i
             if( key_up_state == 1 ) {                           // Long-Time Key Press Confirm ( the Useful Key State )
                 switch( Work_Mode ) {
                     case 0: break;                                          // Mode : Welcom Screen
-                    case 1: Data_Changed = SET_INS_TIMES;
+                    case 1: Cfg_Changed = CFG_INS_TIMES;
                             switch( Page_Number_Cfg )   {                   // Mode : Configration
                                 case 1: switch( Line_number )   {
                                             case 1: Bias_Uab += 10;  break;
@@ -204,7 +205,8 @@ void key_read() {                                               // Read 4 Keys i
                     case 2: switch( Page_Number_Run )   {                   // Mode : Query
                             }
                             break;
-                    case 3: switch( Page_Number_Set )   {                   // Mode : Set
+                    case 3: Set_Changed = SET_INS_TIMES;
+                            switch( Page_Number_Set )   {                   // Mode : Set
                                 case 1: switch( Line_number )   {
                                             case 1: Set_Udc_out += 1;   break;
                                             case 2: Set_Idc_Lmt += 1;   break;
@@ -237,7 +239,7 @@ void key_read() {                                               // Read 4 Keys i
             if( key_dw_state == 1 ) {                           // Key Pressed Confirm ( the Useful Key State )
                 switch( Work_Mode ) {
                     case 0: break;                                          // Mode : Welcom Screen
-                    case 1: Data_Changed = SET_INS_TIMES;
+                    case 1: Cfg_Changed = CFG_INS_TIMES;
                             switch( Page_Number_Cfg )   {                   // Mode : Configration
                                 case 1: switch( Line_number )   {
                                             case 1: Bias_Uab -= 1;  break;
@@ -278,7 +280,8 @@ void key_read() {                                               // Read 4 Keys i
                     case 2: switch( Page_Number_Run )   {                   // Mode : Query
                             }
                             break;
-                    case 3: switch( Page_Number_Set )   {                   // Mode : Set
+                    case 3: Set_Changed = SET_INS_TIMES;
+                            switch( Page_Number_Set )   {                   // Mode : Set
                                 case 1: switch( Line_number )   {
                                             case 1: Set_Udc_out -= 0.1;  break;
                                             case 2: Set_Idc_Lmt -= 0.1;  break;
@@ -300,7 +303,7 @@ void key_read() {                                               // Read 4 Keys i
             if( key_dw_state == 1 ) {                           // Long-Time Key Press Confirm ( the Useful Key State )
                 switch( Work_Mode ) {
                     case 0: break;                                          // Mode : Welcom Screen
-                    case 1: Data_Changed = SET_INS_TIMES;
+                    case 1: Cfg_Changed = CFG_INS_TIMES;
                             switch( Page_Number_Cfg )    {                  // Mode : Configration
                                 case 1: switch( Line_number )   {
                                             case 1: Bias_Uab -= 10;  break;
@@ -341,7 +344,8 @@ void key_read() {                                               // Read 4 Keys i
                     case 2: switch( Page_Number_Run )   {                   // Mode : Query
                             }
                             break;
-                    case 3: switch( Page_Number_Set )   {                   // Mode : Set
+                    case 3: Set_Changed = SET_INS_TIMES;
+                            switch( Page_Number_Set )   {                   // Mode : Set
                                 case 1: switch( Line_number )   {
                                             case 1: Set_Udc_out -= 1;   break;
                                             case 2: Set_Idc_Lmt -= 1;   break;
