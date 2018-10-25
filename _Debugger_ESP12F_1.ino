@@ -52,19 +52,19 @@ void loop() {
 
     // ---------- Uart ----------
 
-    if( (millis()-Send_LastTime) > QUE_INS_INTERVAL )  {    // Send out Instructions at fixed time
+    if( (millis()-Send_LastTime) > QUE_INS_INTERVAL )  {    // Send Instructions in Fixed Time Slots 
         Send_LastTime = millis();
         if( Cfg_Changed != 0 ) {
-            Cmd_Send_Config();                              // Instructions : Config
+            Cmd_Send_Config();                              // Send Instructions : Config ( S1 -> S6 )
         }
         else if( Set_Changed != 0 ) {
 
             Set_Changed = 0;
 
-            Cmd_Send_Setting();                             // Instructions : Setting
+            Cmd_Send_Setting();                             // Send Instructions : Setting ( S10 -> S12 )
         }
         else    {
-            Cmd_Send_Query();                               // Instructions : Querry
+            Cmd_Send_Query();                               // Send Instructions : Querry ( Q01 -> Q12 )
         }
     }
 

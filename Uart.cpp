@@ -107,6 +107,14 @@ void Cmd_Send_Config(void) {
 //------------------------------------------------------------
 void Cmd_Send_Setting(void) {
 
+    switch( Number_Setting ) {
+        case 1: Serial.print("S10");
+                break;
+        case 2: Serial.print("S11");
+                break;
+        case 3: Serial.print("S12");
+                break;
+    }
 }
 
 //------------------------------------------------------------
