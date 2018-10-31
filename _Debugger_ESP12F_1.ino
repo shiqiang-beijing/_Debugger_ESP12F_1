@@ -1,9 +1,14 @@
 
-#include    <ESP8266WiFi.h>
+//------------------------------------------------------------
+//  Libraries
+//------------------------------------------------------------
+#include    <ESP8266WiFi.h>         // ESP8266 Community Library : https://www.esp8266.com/
 #include    <U8g2lib.h>
 
+//------------------------------------------------------------
+//  Modules
+//------------------------------------------------------------
 #include    "Data.h"
-
 #include    "Screen.h"
 #include    "Key.h"
 #include    "Uart.h"
@@ -52,7 +57,7 @@ void loop() {
 
     // ---------- Uart ----------
 
-    if( (millis()-Send_LastTime) > QUE_INS_INTERVAL )  {    // Send Instructions in Fixed Time Slots 
+    if( (millis()-Send_LastTime) > QUE_INS_INTERVAL )  {    // Send Instructions in Fixed Time Slots
         Send_LastTime = millis();
         if( Cfg_Changed != 0 ) {
             Cmd_Send_Config();                              // Send Instructions : Config ( S1 -> S6 )
