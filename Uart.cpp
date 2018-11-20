@@ -1,6 +1,5 @@
 
-#include    <ESP8266WiFi.h>
-
+//------------------------------------------------------------
 #include    "Data.h"
 #include    "Uart.h"
 
@@ -8,8 +7,8 @@
 // Send Out the Query Instructions
 //------------------------------------------------------------
 void Cmd_Send_Query(void) {                         // the Function Serial.println() Terminate with : '\r'+'\n'
-    switch( Number_Query )    {
-        //-----------------------------------
+    switch( Number_Query )    {                     // 'r' : ASCII Code -> 13   Return
+        //-----------------------------------       // 'n' : ASCII Code -> 10   Change Line
         //      Query Internal Parameters
         //-----------------------------------
         case 1: Serial.println("Q01");              // Bias of Uab/Ubc/Uca
@@ -60,10 +59,10 @@ void Cmd_Send_Query(void) {                         // the Function Serial.print
 void Cmd_Send_Config(void) {
     long    tmp_data;
     switch( Number_Config )    {
-        case 1: Serial.print("S1");
-                Serial.print(Bias_Uab);
-                Serial.print(Bias_Ubc);
-                Serial.println(Bias_Uca);           // the Serial.println() Terminator is : '\r'+'\n'
+        case 1: Serial.print("S1");                 // the Serial.println() Terminator is : '\r'+'\n'
+                Serial.print(Bias_Uab);             // 'r' : ASCII Code -> 13   Return
+                Serial.print(Bias_Ubc);             // 'n' : ASCII Code -> 10   Change Line
+                Serial.println(Bias_Uca);
                 Number_Config += 1;
                 break;
         case 2: Serial.print("S2");
@@ -121,17 +120,20 @@ void Cmd_Send_Setting(void) {
 // Received Answer for Querry Instructions
 //------------------------------------------------------------
 
-// ASCII Code 48 -> Data 0
-// ......
-// ASCII Code 57 -> Data 9
+// 'r' : ASCII Code -> 13   Return
+// 'n' : ASCII Code -> 10   Change Line
 
-// ASCII Code 65 -> A ( Uppercase Letter )
+// '0' : ASCII Code -> 48
 // ......
-// ASCII Code 90 -> Z ( Uppercase Letter )
+// '9' : ASCII Code -> 57
 
-// ASCII Code 97 -> a ( Lowercase Letter )
+// 'A' : ASCII Code -> 65   ( Uppercase Letter )
 // ......
-// ASCII Code 122-> z ( Lowercase Letter )
+// 'Z' : ASCII Code -> 90   ( Uppercase Letter )
+
+// 'a' : ASCII Code -> 97   ( Lowercase Letter )
+// ......
+// 'z' : ASCII Code -> 122  ( Lowercase Letter )
 
 //------------------------------------------------------------
 // Data Format:

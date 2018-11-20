@@ -17,9 +17,9 @@
 #define     CFG_INS_TIMES       5                           // SCI Instruction 'Sx' Send Times
 #define     SET_INS_TIMES       5                           // SCI Instruction 'Sx' Send Times
 
-#define     FONT_CHARACTER      u8g2_font_t0_15b_mf         // 10 Pixel Height, English, Bold
-//#define     FONT_CHARACTER      u8g2_font_t0_15_tf        // 10 Pixel Height, English, Fine
-#define     FONT_SYMBOL         u8g2_font_unifont_t_symbols // All Symbols
+#define     FONT_CHARACTER      u8g2_font_t0_15b_mf         // Font : 10 Pixel Height, English, Bold
+//#define     FONT_CHARACTER      u8g2_font_t0_15_tf        // Font : 10 Pixel Height, English, Fine
+#define     FONT_SYMBOL         u8g2_font_unifont_t_symbols // Font : All Symbols
 
 //------------------------------------------------------------
 //      System

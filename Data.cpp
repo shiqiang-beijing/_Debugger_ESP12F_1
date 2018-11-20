@@ -1,4 +1,5 @@
 
+//------------------------------------------------------------
 #include    <U8g2lib.h>
 
 //------------------------------------------------------------
@@ -38,8 +39,8 @@ long    key_dw_last_debounce;
 //------------------------------------------------------------
 //      OLED
 //------------------------------------------------------------
-//U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0);        // page buffer, size = 128 bytes, For 0.96 Inch
-U8G2_SH1106_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0);           // page buffer, size = 128 bytes, For 1.30 Inch
+//U8G2_SSD1306_128X64_NONAME_1_HW_I2C     u8g2(U8G2_R0);      // page buffer, size = 128 bytes, For 0.96 Inch
+U8G2_SH1106_128X64_NONAME_1_HW_I2C      u8g2(U8G2_R0);      // page buffer, size = 128 bytes, For 1.30 Inch
 
 //------------------------------------------------------------
 //      Data for Display
