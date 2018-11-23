@@ -10,6 +10,14 @@ int     time_M = 30;
 int     time_S = 35;
 
 //------------------------------------------------------------
+//      WiFi
+//------------------------------------------------------------
+const char* ssid = "TP-LINK_TL-WR800N";             // Router-1 in DPC
+const char* password = "4808afs7709jjk7sqqs1101";
+//const char* ssid = "TP-LINK_TL-WR800N-2";         // Router-2 in DPC
+//const char* password = "chengong1953";
+
+//------------------------------------------------------------
 //      GPIO
 //------------------------------------------------------------
 int     key_pg = 16;                    // Key : Page
